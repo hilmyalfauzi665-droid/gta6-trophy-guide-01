@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA 6 Trophy Guide &amp; Tracker — All 55 PS5 Trophies</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies: official names, descriptions and grades, a cited guide for each, a roadmap to platinum, missable flags, filters and a spoiler setting.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <h1>GTA 6 Trophy Guide</h1>
+    <p class="subtitle">All 55 PlayStation 5 trophies &middot; 1 platinum &middot; 2 gold &middot; 6 silver &middot; 46 bronze &middot; 28 hidden &middot; single-player only</p>
+  </div>
+  <div class="progress-wrap" aria-label="Platinum progress">
+    <div class="progress-text"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+    <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+    <p class="progress-note" id="progressNote">Tick a trophy when you earn it. Progress is saved in this browser.</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <a href="#/" id="tabChecklist" class="tab">Checklist</a>
+  <a href="#/roadmap" id="tabRoadmap" class="tab">Roadmap to Platinum</a>
+  <a href="#/filter/missable" id="tabMissable" class="tab">Missable</a>
+</nav>
+
+<main>
+  <section id="roadmapView" class="roadmap" hidden>
+    <h2>Roadmap to Platinum</h2>
+    <p class="roadmap-intro">Difficulty about 4/10, roughly 200 hours to platinum (PowerPyx). No mission replay, cheats disable trophies and saving, and free-roam continues after the story — so almost everything can be finished after the credits. Only one trophy is possibly missable: <strong>Positive Mental Attitude</strong> (#28). Work the stages in order.</p>
+    <ol class="stages">
+      <li>
+        <h3>Stage 1 — Story first, 60–80 hours</h3>
+        <p>Play the story across its 5 chapters and do the optional missions as they appear. Scan vehicles and study animals through binoculars as you go — 200 of 277 vehicles and 100 of 255 animals count toward 100% later. <strong>Do the first meditation in Chapter 1</strong> (Lucia, balcony at Jason's house, the morning after “Down to Earth”) — it may be required for #28, and that is unconfirmed, so do it to be safe.</p>
+        <p class="stage-trophies" id="stage1List"></p>
+      </li>
+      <li>
+        <h3>Stage 2 — 100% completion &amp; the big counts, ~100 hours</h3>
+        <p>After the credits, the 100% checklist appears under Progress &gt; Stats &gt; 100% Completion. It has about 35 requirements and is roughly 60% of true completion: 70 of 80 challenges, 200 of 277 vehicles scanned, 100 of 255 animals studied, 300 of 397 stunts, 30 unique race wins, 15 of 18 card sets. Clear the counts in this stage — they are the long grind.</p>
+        <p class="stage-trophies" id="stage2List"></p>
+      </li>
+      <li>
+        <h3>Stage 3 — Strangers &amp; Freaks and cleanup, ~10 hours</h3>
+        <p>Finish the 8 stranger mission strands, then sweep the remaining miscellaneous trophies: partner robberies, vaults, showroom and bowling-alley moments, money and property. The platinum pops with the last trophy.</p>
+        <p class="stage-trophies" id="stage3List"></p>
+      </li>
+    </ol>
+    <p class="missable-callout"><strong>Missable:</strong> only #28 Positive Mental Attitude is flagged as possibly missable (see its guide). Every other trophy is finishable in post-story free-roam, and nothing on the 100% checklist is missable.</p>
+    <p class="sources-note">Roadmap figures: PowerPyx — GTA 6 Trophy Guide &amp; Roadmap, https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/ ; CryptoGames — GTA 6 100% Completion Checklist, https://cryptogames.gg/gta-6-100-completion-checklist/</p>
+  </section>
+
+  <section id="checklistView">
+    <div class="controls">
+      <label class="search">Search <input id="search" type="search" placeholder="Search name or description…" autocomplete="off"></label>
+      <div class="filters" role="group" aria-label="Filter trophies">
+        <button type="button" class="chip" data-filter="all">All 55</button>
+        <button type="button" class="chip" data-filter="story">Story</button>
+        <button type="button" class="chip" data-filter="missable">Missable</button>
+        <button type="button" class="chip" data-filter="collectibles">Collectibles</button>
+        <button type="button" class="chip" data-filter="activities">Activities</button>
+        <button type="button" class="chip" data-filter="online">Online</button>
+        <button type="button" class="chip" data-filter="earned">Earned</button>
+        <button type="button" class="chip" data-filter="remaining">Remaining</button>
+      </div>
+      <div class="settings">
+        <label class="grade-label">Grade
+          <select id="gradeFilter">
+            <option value="all">All grades</option>
+            <option value="platinum">Platinum</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="bronze">Bronze</option>
+          </select>
+        </label>
+        <label class="spoiler"><input id="spoilerToggle" type="checkbox"> Hide story spoilers</label>
+        <button id="exportBtn" type="button">Export progress</button>
+        <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+        <button id="resetBtn" type="button">Reset</button>
+      </div>
+    </div>
+
+    <p class="spoiler-note" id="spoilerNote" hidden>Spoiler mode is on: story trophy names and descriptions stay hidden until you mark them earned.</p>
+    <p class="empty-state" id="emptyState" hidden></p>
+
+    <section id="detailPanel" class="detail" hidden></section>
+
+    <ul id="trophyList" class="trophy-list"></ul>
+    <p class="list-count" id="listCount"></p>
+  </section>
+
+  <footer>
+    <h2>Sources</h2>
+    <p>Official trophy names, descriptions and grades are as PlayStation publishes them (listed by Exophase, PSNProfiles and TrueAchievements, who agree on all 55). Every guide above is written for this page in its own words and cites its sources beside it. Guidance is launch-era: the game released 19 Nov 2026, and where a method is not yet confirmed by players the guide says so honestly instead of inventing steps.</p>
+    <ul class="source-list">
+      <li>PowerPyx — GTA 6 Trophy Guide &amp; Roadmap — https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/</li>
+      <li>Planet GTA 6 — GTA 6 Trophies — https://www.planetgta6.com/en/gta-6-trophies/</li>
+      <li>CryptoGames — GTA 6 Trophies &amp; Achievements Full List — https://cryptogames.gg/gta-6-trophies-achievements-full-list/</li>
+      <li>CryptoGames — GTA 6 100% Completion Checklist — https://cryptogames.gg/gta-6-100-completion-checklist/</li>
+      <li>The Gamers Hub — GTA 6 Checklist — https://www.thegamershub.co/gta-6/checklist/</li>
+      <li>GTABase, GamesRadar+, PC Gamer, Push Square, Press-Start and AlcastHQ — cited by name where used.</li>
+    </ul>
+    <p class="fineprint">Unofficial fan guide. Not affiliated with Rockstar Games or PlayStation. No Rockstar logo or artwork is used. Works fully offline; the only file it fetches is its own data/trophies.json.</p>
+  </footer>
+</main>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
